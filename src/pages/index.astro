@@ -17,7 +17,10 @@
     </button>
     
     <main>
-      <h1>Paul Vudmaska</h1>
+      <div class="name-box">
+        <h1>Paul Vudmaska</h1>
+        <p class="tagline">Simple-minded full stack developer · Rails · Astro</p>
+      </div>
       <a href="https://cal.com/paul-vudmaska/15min" class="cta">Book a Call</a>
     </main>
 
@@ -63,11 +66,38 @@
         padding: 2rem;
       }
 
+      .name-box {
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+        border: 2px solid var(--accent);
+        border-radius: 24px;
+        padding: 2.5rem 3rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+      }
+
+      [data-theme="light"] .name-box,
+      :root:not([data-theme="dark"]) .name-box {
+        background: linear-gradient(135deg, rgba(45, 45, 45, 0.08), rgba(45, 45, 45, 0.02));
+        border-color: var(--accent);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
       h1 {
         font-size: clamp(2.5rem, 8vw, 5rem);
         font-weight: 700;
-        margin-bottom: 2rem;
+        margin-bottom: 0.5rem;
         letter-spacing: -0.02em;
+        background: linear-gradient(135deg, var(--text), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .tagline {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        color: var(--accent);
+        margin-bottom: 2rem;
+        font-weight: 400;
       }
 
       .cta {
