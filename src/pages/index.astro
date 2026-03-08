@@ -1,0 +1,170 @@
+---
+// Component script (runs on server)
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paul Vudmaska</title>
+    <style>
+      :root {
+        --bg-color: #667eea;
+        --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --text-color: white;
+        --button-bg: rgba(255, 255, 255, 0.2);
+        --button-border: rgba(255, 255, 255, 0.3);
+        --button-hover: rgba(255, 255, 255, 0.3);
+      }
+
+      [data-theme="dark"] {
+        --bg-color: #1a1a2e;
+        --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        --text-color: #e0e0e0;
+        --button-bg: rgba(255, 255, 255, 0.1);
+        --button-border: rgba(255, 255, 255, 0.2);
+        --button-hover: rgba(255, 255, 255, 0.2);
+      }
+
+      [data-theme="light"] {
+        --bg-color: #f8f9fa;
+        --bg-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        --text-color: #333;
+        --button-bg: rgba(0, 0, 0, 0.1);
+        --button-border: rgba(0, 0, 0, 0.2);
+        --button-hover: rgba(0, 0, 0, 0.2);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        transition: all 0.3s ease;
+      }
+
+      .theme-toggle {
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        background: var(--button-bg);
+        border: 2px solid var(--button-border);
+        border-radius: 50px;
+        padding: 0.5rem 1rem;
+        color: var(--text-color);
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        z-index: 100;
+      }
+
+      .theme-toggle:hover {
+        background: var(--button-hover);
+        transform: translateY(-2px);
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bg-gradient);
+        text-align: center;
+        color: var(--text-color);
+      }
+
+      .hero-content {
+        max-width: 600px;
+        padding: 2rem;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 300;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: var(--button-bg);
+        color: var(--text-color);
+        text-decoration: none;
+        border-radius: 50px;
+        border: 2px solid var(--button-border);
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background: var(--button-hover);
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .hero-content {
+          padding: 1rem;
+        }
+
+        .theme-toggle {
+          top: 1rem;
+          right: 1rem;
+          padding: 0.4rem 0.8rem;
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+    
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Paul Vudmaska</h1>
+        <p class="subtitle">Developer & Innovator</p>
+        <a href="https://cal.com/paul-vudmaska/15min" class="cta-button">Schedule a Call</a>
+      </div>
+    </section>
+
+    <script>
+      const themeToggle = document.getElementById('themeToggle');
+      const body = document.body;
+      
+      // Load saved theme or default to system preference
+      const savedTheme = localStorage.getItem('theme') || 
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      
+      body.setAttribute('data-theme', savedTheme);
+      updateToggleText(savedTheme);
+      
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateToggleText(newTheme);
+      });
+      
+      function updateToggleText(theme) {
+        themeToggle.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
+      }
+    </script>
+  </body>
+</html>
