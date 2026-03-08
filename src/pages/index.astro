@@ -84,10 +84,43 @@
         padding: 2rem;
       }
 
+      .name-box {
+        background: linear-gradient(135deg, #d4af37, #ffd700);
+        border: 3px solid #d4af37;
+        border-radius: 25px;
+        padding: 1.5rem 2.5rem;
+        margin: 1rem 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transform: translateY(0);
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .name-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+      }
+
+      [data-theme="light"] .name-box {
+        background: linear-gradient(135deg, #2c2c2c, #404040);
+        border-color: #2c2c2c;
+        color: #f8f6f0;
+      }
+
+      [data-theme="light"] .name-box:hover {
+        background: linear-gradient(135deg, #404040, #555555);
+      }
+
       h1 {
         font-size: 3rem;
-        margin-bottom: 1rem;
+        margin: 0;
         font-weight: 300;
+        color: #0f1419;
+      }
+
+      [data-theme="light"] h1 {
+        color: #f8f6f0;
       }
 
       .subtitle {
@@ -136,7 +169,9 @@
     
     <section class="hero">
       <div class="hero-content">
-        <h1>Paul Vudmaska</h1>
+        <div class="name-box">
+          <h1>Paul Vudmaska</h1>
+        </div>
         <p class="subtitle">Simple minded to full stack developer • Rails • Astro</p>
         <a href="https://cal.com/paul-vudmaska/15min" class="cta-button">Schedule a Call</a>
       </div>
