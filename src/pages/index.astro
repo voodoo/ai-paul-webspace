@@ -94,6 +94,36 @@
         transform: translateY(0);
         transition: all 0.3s ease;
         display: inline-block;
+        position: relative;
+      }
+
+      .name-box-cta {
+        position: absolute;
+        bottom: 1rem;
+        right: 1.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(15, 20, 25, 0.8);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .name-box-cta:hover {
+        background: rgba(15, 20, 25, 0.9);
+        transform: translateY(-2px);
+      }
+
+      [data-theme="light"] .name-box-cta {
+        background: rgba(248, 246, 240, 0.9);
+        color: #2c2c2c;
+        border-color: rgba(44, 44, 44, 0.2);
+      }
+
+      [data-theme="light"] .name-box-cta:hover {
+        background: rgba(248, 246, 240, 1);
       }
 
       .name-box:hover {
@@ -137,21 +167,37 @@
         font-weight: 300;
       }
 
-      .cta-button {
-        display: inline-block;
-        padding: 1rem 2rem;
+      .toolbar {
+        position: fixed;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 1rem;
         background: var(--button-bg);
-        color: var(--text-color);
-        text-decoration: none;
-        border-radius: 50px;
         border: 2px solid var(--button-border);
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
+        border-radius: 50px;
+        padding: 0.75rem 1.5rem;
+        backdrop-filter: blur(10px);
+        z-index: 100;
       }
 
-      .cta-button:hover {
+      .toolbar-button {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: transparent;
+        color: var(--text-color);
+        text-decoration: none;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+      }
+
+      .toolbar-button:hover {
         background: var(--button-hover);
         transform: translateY(-2px);
+        border-color: var(--button-border);
       }
 
       @media (max-width: 768px) {
@@ -169,6 +215,23 @@
           padding: 0.4rem 0.8rem;
           font-size: 0.8rem;
         }
+
+        .name-box-cta {
+          position: static;
+          display: block;
+          margin-top: 1rem;
+          text-align: center;
+        }
+
+        .toolbar {
+          bottom: 1rem;
+          padding: 0.5rem 1rem;
+        }
+
+        .toolbar-button {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.8rem;
+        }
       }
     </style>
   </head>
@@ -179,12 +242,17 @@
       <div class="hero-content">
         <div class="name-box">
           <h1>Paul Vudmaska</h1>
+          <a href="https://cal.com/paul-vudmaska/15min" class="name-box-cta">Book Call</a>
         </div>
         <p class="subtitle">Simple minded to full stack developer • Rails • Astro</p>
         <p class="bio">Question Everything</p>
-        <a href="https://cal.com/paul-vudmaska/15min" class="cta-button">Schedule a Call</a>
       </div>
     </section>
+
+    <div class="toolbar">
+      <a href="https://github.com/voodoo" class="toolbar-button">GitHub</a>
+      <a href="https://cal.com/paul-vudmaska/15min" class="toolbar-button">Book a Call</a>
+    </div>
 
     <script>
       const themeToggle = document.getElementById('themeToggle');
