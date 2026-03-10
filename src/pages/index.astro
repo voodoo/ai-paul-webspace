@@ -13,7 +13,7 @@
   <body>
     <nav class="toolbar">
       <!-- Developer Text (Left) -->
-      <div class="developer-text">developer</div>
+      <div class="developer-text">Simple Minded</div>
 
       <!-- GitHub + Theme Toggle (Right) -->
       <div class="toolbar-right">
@@ -75,11 +75,11 @@
       }
 
       [data-theme="dark"] {
-        --bg: #0a1628;
+        --bg: #050d1a;
         --text: #f5f5f0;
         --accent: #d4af37;
         --button-bg: #d4af37;
-        --button-text: #0a1628;
+        --button-text: #050d1a;
       }
 
       * {
@@ -93,18 +93,23 @@
       }
 
       body {
-        background-color: var(--bg);
+        background: linear-gradient(180deg, var(--bg) 0%, var(--bg) 70%, rgba(74, 85, 104, 0.1) 100%);
         color: var(--text);
         min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: background-color 0.3s, color 0.3s;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      [data-theme="dark"] body {
+        background: linear-gradient(180deg, var(--bg) 0%, var(--bg) 70%, rgba(212, 175, 55, 0.08) 100%);
       }
 
       main {
         text-align: center;
         padding: 2rem;
+        margin-top: 5rem;
       }
 
       .name-box {
@@ -156,12 +161,24 @@
         right: 0;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        padding: 1rem 1.5rem;
-        background: var(--bg);
+        align-items: flex-start;
+        padding: 1.5rem 1.5rem;
+        background: linear-gradient(180deg, var(--bg) 0%, rgba(74, 85, 104, 0.25) 100%);
         z-index: 100;
-        border-bottom: 1px solid var(--accent);
-        border-bottom-opacity: 0.2;
+        border-bottom: 2px solid rgba(74, 85, 104, 0.3);
+      }
+
+      [data-theme="dark"] .toolbar {
+        background: linear-gradient(180deg, var(--bg) 0%, rgba(212, 175, 55, 0.12) 100%);
+        border-bottom-color: rgba(212, 175, 55, 0.2);
+      }
+
+      [data-theme="dark"] .toolbar {
+        background: linear-gradient(135deg, #050d1a, rgba(212, 175, 55, 0.08));
+      }
+
+      [data-theme="light"] .toolbar {
+        background: linear-gradient(135deg, #f5f5f0, rgba(45, 45, 45, 0.05));
       }
 
       .developer-text {
