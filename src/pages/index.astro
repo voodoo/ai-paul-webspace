@@ -12,17 +12,65 @@
   </head>
   <body>
     <nav class="toolbar">
-      <a href="https://github.com/voodoo" class="github-link" aria-label="GitHub Profile">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+      <!-- Developer Illustration (Left) -->
+      <div class="developer-icon">
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <!-- Head -->
+          <circle cx="32" cy="16" r="8"/>
+          <!-- Body -->
+          <line x1="32" y1="24" x2="32" y2="40"/>
+          <!-- Left Arm -->
+          <line x1="32" y1="28" x2="20" y2="36"/>
+          <!-- Right Arm -->
+          <line x1="32" y1="28" x2="44" y2="36"/>
+          <!-- Left Leg -->
+          <line x1="32" y1="40" x2="24" y2="56"/>
+          <!-- Right Leg -->
+          <line x1="32" y1="40" x2="40" y2="56"/>
+          <!-- Code brackets (left side) -->
+          <path d="M 12 20 L 16 24 L 12 28" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Code brackets (right side) -->
+          <path d="M 52 20 L 48 24 L 52 28" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-      </a>
+      </div>
+
+      <!-- GitHub + Theme Toggle (Right) -->
       <div class="toolbar-right">
-        <a href="https://cal.com/paul-vudmaska/15min" class="cta cta-small">Book a Call</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <span class="sun">☀️</span>
-          <span class="moon">🌙</span>
-        </button>
+        <a href="https://github.com/voodoo" class="github-link" aria-label="GitHub Profile">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+        </a>
+
+        <!-- Theme Toggle (Vertical Radio) -->
+        <div class="theme-toggle-group" role="group" aria-label="Theme selector">
+          <button 
+            class="theme-option theme-option-dark" 
+            id="themeDark" 
+            aria-label="Dark theme"
+            aria-pressed="false">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+          <button 
+            class="theme-option theme-option-light" 
+            id="themeLight" 
+            aria-label="Light theme"
+            aria-pressed="false">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </nav>
     
@@ -131,21 +179,67 @@
         padding: 1rem 1.5rem;
         background: var(--bg);
         z-index: 100;
+        border-bottom: 1px solid var(--accent);
+        border-bottom-opacity: 0.2;
+      }
+
+      .developer-icon {
+        color: var(--accent);
+        transition: color 0.3s;
+      }
+
+      .developer-icon:hover {
+        color: var(--text);
       }
 
       .toolbar-right {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1.5rem;
       }
 
       .github-link {
         color: var(--text);
         transition: color 0.2s;
+        display: flex;
+        align-items: center;
       }
 
       .github-link:hover {
         color: var(--accent);
+      }
+
+      .theme-toggle-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        border: 2px solid var(--accent);
+        border-radius: 8px;
+        background: transparent;
+      }
+
+      .theme-option {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text);
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        transition: background-color 0.2s, color 0.2s;
+      }
+
+      .theme-option:hover {
+        background-color: var(--accent);
+        color: var(--bg);
+      }
+
+      .theme-option[aria-pressed="true"] {
+        background-color: var(--accent);
+        color: var(--bg);
       }
 
       .cta {
@@ -180,51 +274,41 @@
       [data-theme="dark"] .cta:hover {
         box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
       }
-
-      .theme-toggle {
-        background: none;
-        border: 2px solid var(--accent);
-        border-radius: 50%;
-        width: 48px;
-        height: 48px;
-        cursor: pointer;
-        font-size: 1.25rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: border-color 0.3s;
-      }
-
-      .theme-toggle:hover {
-        border-color: var(--text);
-      }
-
-      .sun { display: none; }
-      .moon { display: block; }
-
-      [data-theme="dark"] .sun { display: block; }
-      [data-theme="dark"] .moon { display: none; }
     </style>
 
     <script>
-      const toggle = document.getElementById('themeToggle');
+      const themeDarkBtn = document.getElementById('themeDark');
+      const themeLightBtn = document.getElementById('themeLight');
       const html = document.documentElement;
       
       // Check for saved preference or system preference
       const savedTheme = localStorage.getItem('theme');
       const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       
-      if (savedTheme) {
-        html.setAttribute('data-theme', savedTheme);
-      } else if (systemDark) {
-        html.setAttribute('data-theme', 'dark');
+      const initialTheme = savedTheme || (systemDark ? 'dark' : 'light');
+      html.setAttribute('data-theme', initialTheme);
+      updateButtonStates(initialTheme);
+
+      function updateButtonStates(theme) {
+        if (theme === 'dark') {
+          themeDarkBtn.setAttribute('aria-pressed', 'true');
+          themeLightBtn.setAttribute('aria-pressed', 'false');
+        } else {
+          themeDarkBtn.setAttribute('aria-pressed', 'false');
+          themeLightBtn.setAttribute('aria-pressed', 'true');
+        }
       }
 
-      toggle.addEventListener('click', () => {
-        const current = html.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
+      themeDarkBtn.addEventListener('click', () => {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        updateButtonStates('dark');
+      });
+
+      themeLightBtn.addEventListener('click', () => {
+        html.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        updateButtonStates('light');
       });
     </script>
   </body>
