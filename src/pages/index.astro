@@ -63,6 +63,12 @@
         <p class="bio">"Question Everything"</p>
         <a href="https://cal.com/paul-vudmaska/15min" class="cta cta-box">Book a Call</a>
       </div>
+
+      <div class="book-section">
+        <h2>A Caveman's Guide</h2>
+        <p class="book-description">Life expectancy is dropping for the first time in modern history. Why? Explore the broken food system, seed oils, and why our healthcare is really a sick-care system.</p>
+        <a href="https://caveman-guide.vercel.app/" class="cta cta-book">Read the Book</a>
+      </div>
     </main>
 
     <style>
@@ -264,6 +270,42 @@
 
       .cta-box {
         margin-top: 1.5rem;
+        margin-left: auto;
+        display: block;
+        width: fit-content;
+      }
+
+      .book-section {
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.02));
+        border: 2px solid var(--accent);
+        border-radius: 24px;
+        padding: 2.5rem 3rem;
+        margin-top: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      [data-theme="light"] .book-section {
+        background: linear-gradient(135deg, rgba(45, 45, 45, 0.06), rgba(45, 45, 45, 0.01));
+      }
+
+      .book-section h2 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--accent);
+      }
+
+      .book-description {
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
+        color: var(--text);
+        opacity: 0.85;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .cta-book {
         margin-left: auto;
         display: block;
         width: fit-content;
